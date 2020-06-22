@@ -1,0 +1,55 @@
+{
+  "name": "assemblyscript-loader-loader",
+  "version": "0.1.0",
+  "description": "A webpack loader that compiles AssemblyScript to WebAssembly.",
+  "keywords": [
+    "webpack",
+    "loader",
+    "AssemblyScript",
+    "WebAssembly"
+  ],
+  "homepage": "https://github.com/chenhebing/assemblyscript-loader-loader",
+  "license": "MIT",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chenhebing/assemblyscript-loader-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhebing/assemblyscript-loader-loader/issues"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.10.1",
+    "assemblyscript": "^0.12.3",
+    "loader-utils": "^2.0.0",
+    "memfs": "^3.2.0",
+    "schema-utils": "^2.7.0"
+  },
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prepare && lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@ice/spec": "^1.0.1",
+    "@types/json-schema": "^7.0.5",
+    "@types/loader-utils": "^2.0.0",
+    "@types/webpack": "^4.41.17",
+    "eslint": "~7.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "typescript": "^3.9.5"
+  }
+}
