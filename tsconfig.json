@@ -3,14 +3,13 @@
   "buildOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "lib",
-    "module": "esnext",
-    "target": "es5",
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es6",
     "jsx": "react",
     "moduleResolution": "node",
     "declaration": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "rootDir": "src",
@@ -22,9 +21,15 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
+    "strict": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
+    "types": [
+      "node",
+      "webpack"
+    ],
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib"]

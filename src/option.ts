@@ -22,7 +22,7 @@ const ascSchemaOptions = Object.entries(options).reduce((ret: ISchemaOption, [ k
       [key]: {
         type: schemaType,
         default: item.default,
-        description: item.description,
+        description: Array.isArray(item.description) ? item.description.join(',') : item.description,
       },
     });
   }

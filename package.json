@@ -1,6 +1,6 @@
 {
   "name": "assemblyscript-loader-loader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A webpack loader that compiles AssemblyScript to WebAssembly.",
   "keywords": [
     "webpack",
@@ -9,10 +9,9 @@
     "WebAssembly"
   ],
   "homepage": "https://github.com/chenhebing/assemblyscript-loader-loader",
-  "license": "MIT",
-  "module": "lib/index.js",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "engines": {
     "node": ">=8"
@@ -32,7 +31,7 @@
     "schema-utils": "^2.7.0"
   },
   "scripts": {
-    "prepare": "tsc"
+    "prepare": "rm -rf dist && tsc"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint"
@@ -51,5 +50,6 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "typescript": "^3.9.5"
-  }
+  },
+  "license": "MIT"
 }

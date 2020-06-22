@@ -1,3 +1,4 @@
 # 忽略目录
 lib/
+dist/
 node_modules/
