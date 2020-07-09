@@ -17,13 +17,15 @@ export default async (imports) => {
   const buffer = new ArrayBuffer(${buf.length});
   const uint8 = new Uint8Array(buffer);
   uint8.set([${buf.join(',')}]);
-  return await loader.instantiate(buffer, imports || {});
+  const { exports } = await loader.instantiate(buffer, imports || {});
+  return exports;
 };`;
 
 const getFileWasmModule = (fetchUrl: string): string => `
 import loader from '${loaderpkg}';
 export default async (imports) => {
-  return await loader.instantiateStreaming(fetch(${fetchUrl}), imports || {});
+  const { exports } = await loader.instantiateStreaming(fetch(${fetchUrl}), imports || {});
+  return exports;
 }`;
 
 export default function assemblyscriptLoader(this: loader.LoaderContext): void {
